@@ -7,7 +7,6 @@ env:
       - UNICODE_WIDTH=32
       - BUILD_DEPENDS="cython numpy matplotlib pyQt5 sklearn pandas xlsxwriter joblib numpydoc==0.7.0"
       - TEST_DEPENDS="numpy matplotlib pyQt5 sklearn pandas xlsxwriter joblib pytest"
-      - MANYLINUX_URL=https://5cf40426d9f06eb7461d-6fe47d9331aba7cd62fc36c7196769e4.ssl.cf2.rackcdn.com
       - WHEELHOUSE_UPLOADER_USERNAME=travis-worker
       # Following generated with
       # travis encrypt -r scikit-image/scikit-image-wheels WHEELHOUSE_UPLOADER_SECRET=<the api key>
