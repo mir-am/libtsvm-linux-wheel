@@ -4,8 +4,8 @@
 function pre_build {
     # Any stuff that you need to do before you start building the wheels
     # Runs in the root directory of this repository.
-    echo "$OS"
-	echo "Install"
+	echo "Install dependencies"
+	yum install lapack-devel blas-devel -y
 }
 
 function run_tests {
