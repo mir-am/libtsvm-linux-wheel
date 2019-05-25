@@ -55,7 +55,7 @@ script:
 
 deploy:
     provider: releases
-    api_key: df4486cbef5cbd84feec266adb0450b24e22caef
+    api_key: "37e2caa7380bbe38a4d1619d2c92faa9f92a019f"
     file_glob: true
     file: ${TRAVIS_BUILD_DIR}/wheelhouse/*
     skip_cleanup: true
