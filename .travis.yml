@@ -38,6 +38,8 @@ matrix:
       env:
         - MB_PYTHON_VERSION=3.7
 
+branches: wheel
+
 before_install:
     - source multibuild/common_utils.sh
     - source multibuild/travis_steps.sh
@@ -59,9 +61,7 @@ deploy:
     skip_cleanup: true
     draft: true
     on:
-      branches:
-        only:
-          - wheel     
+      branches: wheel     
 #after_success:
 #    - ls "${TRAVIS_BUILD_DIR}/wheelhouse/" -lh
 #    - python upload.py ${TRAVIS_BUILD_DIR}/wheelhouse/
