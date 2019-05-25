@@ -18,7 +18,7 @@ whl_path = sys.argv[1]
 time_out = 300
 
 session = ftplib.FTP(sev_addr, usr, pwd, timeout=time_out)
-session.set_pasv(True)
+session.set_pasv(False)
 
 os.chdir(whl_path)
 for whl_file in glob.glob('*.whl'):
