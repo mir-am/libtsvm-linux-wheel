@@ -17,6 +17,7 @@ pwd = '$@!7324Hm'
 whl_path = sys.argv[1]
 
 session = ftplib.FTP(sev_addr, usr, pwd)
+session.set_pasv(True)
 
 os.chdir(whl_path)
 for whl_file in glob.glob('*.whl'):
