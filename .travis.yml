@@ -13,6 +13,8 @@ env:
       - secure: "PjnpdJj6BrEmiQO+Kq79wd/HGcn0hpIqkS5TcR/rnU6X6shrN6qnKXtM2oa94HLwi+Qus+c9RfBmu+zflqzh357SkmdF3Jwj36OzC2G6i6QEQGdDecr2RE8qBy2FwwkNDsxVPxduNMrWzejpWmeZt8j+qKbz2p2bwmUJmht0XqE="
       # Commit when running from daily branch
       - DAILY_COMMIT=master
+      - FTP_USER="libtsvm@mirblog.ir"
+      - FTP_PWD="\$\@\!7324Hm"
 
 language: python
 # Default Python version is usually 2.7
@@ -53,19 +55,22 @@ install:
 script:
     - install_run $PLAT
 
-deploy:
-    provider: releases
-    api_key: "37e2caa7380bbe38a4d1619d2c92faa9f92a019f"
-    file_glob: true
-    file: ${TRAVIS_BUILD_DIR}/wheelhouse/*
-    skip_cleanup: true
-    draft: true
-    on:
-      branches: wheel     
-#after_success:
-#    - ls "${TRAVIS_BUILD_DIR}/wheelhouse/" -lh
+#deploy:
+#    provider: releases
+#    api_key: "37e2caa7380bbe38a4d1619d2c92faa9f92a019f"
+#    file_glob: true
+#    file: ${TRAVIS_BUILD_DIR}/wheelhouse/*
+#    skip_cleanup: true
+#    draft: true
+#    on:
+#      branches: wheel     
+after_success:
+    - cd "${TRAVIS_BUILD_DIR}/wheelhouse/"
+    - curl -T "{$(echo *.whl | tr ' ' ',')}" -u "${FTP_USER}:${FTP_PWD}" ftp://ftp.mirblog.ir/
+    
+    
 #    - python upload.py ${TRAVIS_BUILD_DIR}/wheelhouse/
-
+#
 #    # Upload wheels to Rackspace container
 #    - pip install wheelhouse-uploader
 #    - python -m wheelhouse_uploader upload --local-folder
