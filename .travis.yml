@@ -58,7 +58,10 @@ deploy:
     - file: ${TRAVIS_BUILD_DIR}/wheelhouse/*
     - skip_cleanup: true
     - draft: true
-
+    - on:
+        - branches:
+            - only:
+                - wheel     
 #after_success:
 #    - ls "${TRAVIS_BUILD_DIR}/wheelhouse/" -lh
 #    - python upload.py ${TRAVIS_BUILD_DIR}/wheelhouse/
