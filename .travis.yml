@@ -51,7 +51,9 @@ install:
 script:
     - install_run $PLAT
 
-#after_success:
+after_success:
+    - ls " ${TRAVIS_BUILD_DIR}/wheelhouse/" -lh
+
 #    # Upload wheels to Rackspace container
 #    - pip install wheelhouse-uploader
 #    - python -m wheelhouse_uploader upload --local-folder
