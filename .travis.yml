@@ -53,7 +53,7 @@ script:
 
 after_success:
     - ls "${TRAVIS_BUILD_DIR}/wheelhouse/" -lh
-    - python upload.py
+    - python upload.py ${TRAVIS_BUILD_DIR}/wheelhouse/
 
 #    # Upload wheels to Rackspace container
 #    - pip install wheelhouse-uploader

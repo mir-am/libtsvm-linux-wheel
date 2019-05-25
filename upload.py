@@ -9,11 +9,12 @@ Created on Sat May 25 10:36:35 2019
 import ftplib
 import glob
 import os
+import sys
 
 sev_addr = 'ftp.mirblog.ir'
 usr = 'libtsvm@mirblog.ir'
 pwd = '$@!7324Hm'
-whl_path = "${TRAVIS_BUILD_DIR}/wheelhouse/"
+whl_path = sys.argv[1]
 
 session = ftplib.FTP(sev_addr, usr, pwd)
 
