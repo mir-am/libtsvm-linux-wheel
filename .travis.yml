@@ -52,7 +52,7 @@ script:
     - install_run $PLAT
 
 after_success:
-    - ls " ${TRAVIS_BUILD_DIR}/wheelhouse/" -lh
+    - ls "${TRAVIS_BUILD_DIR}/wheelhouse/" -lh
 
 #    # Upload wheels to Rackspace container
 #    - pip install wheelhouse-uploader
