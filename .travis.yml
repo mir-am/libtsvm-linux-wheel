@@ -14,7 +14,7 @@ env:
       # Commit when running from daily branch
       - DAILY_COMMIT=master
       - FTP_USER="libtsvm@mirblog.ir"
-      - FTP_PWD="\$\@\!7324Hm"
+      - FTP_PWD="\$@!7324Hm"
 
 language: python
 # Default Python version is usually 2.7
