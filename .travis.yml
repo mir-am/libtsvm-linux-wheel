@@ -66,7 +66,7 @@ script:
 #      branches: wheel     
 after_success:
     - cd "${TRAVIS_BUILD_DIR}/wheelhouse/"
-    - curl -T "{$(echo *.whl | tr ' ' ',')}" -u "${FTP_USER}:${FTP_PWD}" ftp://ftp.mirblog.ir/
+    - curl --verbose --progress-bar --ipv4 --connect-timeout 8 --max-time 120 --retry 128 --ftp-pasv -T "{$(echo *.whl | tr ' ' ',')}" -u "${FTP_USER}:${FTP_PWD}" ftp://ftp.mirblog.ir/
     
     
 #    - python upload.py ${TRAVIS_BUILD_DIR}/wheelhouse/
