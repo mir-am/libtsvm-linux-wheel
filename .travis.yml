@@ -43,7 +43,6 @@ matrix:
 branches: wheel
 
 before_install:
-    - pip install dropbox
     - source multibuild/common_utils.sh
     - source multibuild/travis_steps.sh
     - before_install
@@ -69,6 +68,7 @@ after_success:
     
     #- cd "${TRAVIS_BUILD_DIR}/wheelhouse/"
     #- curl --verbose --progress-bar --ipv4 --connect-timeout 8 --max-time 120 --retry 128 --ftp-pasv -T "{$(echo *.whl | tr ' ' ',')}" -u "${FTP_USER}:${FTP_PWD}" ftp://ftp.mirblog.ir/   
+    - pip install dropbox
     - python upload.py ${TRAVIS_BUILD_DIR}/wheelhouse/
 #
 #    # Upload wheels to Rackspace container
