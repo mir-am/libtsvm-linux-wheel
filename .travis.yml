@@ -43,6 +43,7 @@ matrix:
 branches: wheel
 
 before_install:
+    - pip install dropbox
     - source multibuild/common_utils.sh
     - source multibuild/travis_steps.sh
     - before_install
