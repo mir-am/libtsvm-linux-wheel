@@ -53,25 +53,26 @@ build_script:
     - cd %REPO_DIR%
     - git checkout %BUILD_COMMIT%
     - python setup.py bdist_wheel
+    - dir dist
     - cd ..
 
-#test_script:
-#    # create test env
-#    - virtualenv --python %PYTHON%\Python.exe test_env
-#    - test_env\Scripts\activate.bat
-#    - where python
-#    - python -m pip install %NP_TEST_DEP% %OTHER_TEST_DEP%
-#
-#    # install from wheel
-#    - python -m pip install --pre --no-index --find-links %REPO_DIR%\dist\ %PACKAGE_NAME%
-#
-#    # Change into an innocuous directory and find tests from installation
+test_script:
+    # create test env
+    - virtualenv --python %PYTHON%\Python.exe test_env
+    - test_env\Scripts\activate.bat
+    - where python
+    - python -m pip install %NP_TEST_DEP% %OTHER_TEST_DEP%
+
+    # install from wheel
+    - python -m pip install --pre --no-index --find-links %REPO_DIR%\dist\ %PACKAGE_NAME%
+
+    # Change into an innocuous directory and find tests from installation
 #    - mkdir for_testing
 #    - cd for_testing
 #    - python --version
 #    - python -c "import astropy; astropy.test(remote_data='none')"
 #    - cd ..
-#
+
 #artifacts:
 #    - path: "%REPO_DIR%\\dist\\*"
 #
