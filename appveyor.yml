@@ -76,10 +76,9 @@ test_script:
 #artifacts:
 #    - path: "%REPO_DIR%\\dist\\*"
 #
-#on_success:
-#  # Upload the generated wheel package to Rackspace
-#  # On Windows, Apache Libcloud cannot find a standard CA cert bundle so we
-#  # disable the ssl checks.
-#  - python -m pip install wheelhouse-uploader
-#  - "python -m wheelhouse_uploader upload
-#    --no-ssl-check --local-folder=%REPO_DIR%\\dist --no-update-index wheels"
+on_success:
+  # Upload the generated wheel package to Rackspace
+  # On Windows, Apache Libcloud cannot find a standard CA cert bundle so we
+  # disable the ssl checks.
+  - python -m pip install dropbox
+  - python upload.py %REPO_DIR%\dist\

@@ -7,14 +7,6 @@ env:
       - UNICODE_WIDTH=32
       - BUILD_DEPENDS="cython numpy matplotlib pyQt5 sklearn pandas xlsxwriter joblib numpydoc==0.7.0"
       - TEST_DEPENDS="numpy matplotlib pyQt5 sklearn pandas xlsxwriter joblib pytest"
-      - WHEELHOUSE_UPLOADER_USERNAME=travis-worker
-      # Following generated with
-      # travis encrypt -r scikit-image/scikit-image-wheels WHEELHOUSE_UPLOADER_SECRET=<the api key>
-      - secure: "PjnpdJj6BrEmiQO+Kq79wd/HGcn0hpIqkS5TcR/rnU6X6shrN6qnKXtM2oa94HLwi+Qus+c9RfBmu+zflqzh357SkmdF3Jwj36OzC2G6i6QEQGdDecr2RE8qBy2FwwkNDsxVPxduNMrWzejpWmeZt8j+qKbz2p2bwmUJmht0XqE="
-      # Commit when running from daily branch
-      - DAILY_COMMIT=master
-      - FTP_USER="libtsvm@mirblog.ir"
-      - FTP_PWD="\$@!7324Hm"
 
 language: python
 # Default Python version is usually 2.7
