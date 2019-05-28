@@ -64,7 +64,7 @@ test_script:
     - python -m pip install %NP_TEST_DEP% %OTHER_TEST_DEP%
 
     # install from wheel
-    - python -m pip install --pre --no-index --find-links %REPO_DIR%\dist\ %PACKAGE_NAME%
+    - python -m pip install --find-links %REPO_DIR%\dist\ %PACKAGE_NAME%
 
     # Change into an innocuous directory and find tests from installation
 #    - mkdir for_testing
