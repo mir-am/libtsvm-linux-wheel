@@ -2,7 +2,7 @@ env:
   global:
       - REPO_DIR="LIBTwinSVM"
       # Also see DAILY_COMMIT below
-      - BUILD_COMMIT=v0.2.0
+      - BUILD_COMMIT=v0.3.0
       - PLAT=x86_64
       - UNICODE_WIDTH=32
       - BUILD_DEPENDS="cython numpy matplotlib pyQt5 sklearn pandas xlsxwriter joblib numpydoc==0.7.0"
